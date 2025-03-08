@@ -1,4 +1,5 @@
 import br.com.xpto.modelo.Planner;
+import br.com.xpto.modelo.Tarefa;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -9,6 +10,7 @@ public class Main {
         Scanner inputInt = new Scanner(System.in);
         Scanner inputString = new Scanner(System.in);
         ArrayList<Planner> plannerList = new ArrayList<Planner>();
+
         int choice = 0;
         System.out.println("-- Bem vindo a Lista de tarefas XPTO --");
         while(choice != 8){
@@ -16,11 +18,10 @@ public class Main {
                     \n1 - Criar um planner
                     2 - Visualizar planner
                     3 - Excluir um planner
-                    4 - Adicionar uma tarefa - EM BREVE
-                    5 - Concluir uma tarefa - EM BREVE
-                    6 - Remover uma tarefa - EM BREVE
-                    7 - Exibir completamente uma tarefa - EM BREVE
-                    8 - Sair
+                    4 - Cria tarefa uma tarefa
+                    5 - Liatar tarefas - EM BREVE
+                    6 - Concluir uma tarefa - EM BREVE
+                    7 - Sair
                     """);
             choice = inputInt.nextInt();
 
@@ -28,11 +29,9 @@ public class Main {
                 case 1:
                     Planner createPlanner = new Planner();
                     System.out.println("\n-- Digite o nome do seu planner --");
-                    String nome = inputString.nextLine();
-                    createPlanner.setNome(nome);
+                    String nomePlanner = inputString.nextLine();
+                    createPlanner.setNome(nomePlanner,plannerList.size() + 1);
                     plannerList.add(createPlanner);
-                    int id = plannerList.size();
-                    createPlanner.setId(id);
                     break;
 
                 case 2:
@@ -55,6 +54,18 @@ public class Main {
                         planner.getinfo();
                     }
                     break;
+                case 4:
+                    int idChoice = inputInt.nextInt();
+                    Planner plannerChoice = plannerList.get(idChoice -1);
+                    System.out.println("\n-- Escreva o nome da sua tarefa -- ");
+                    Tarefa createTarefa = new Tarefa();
+                    String nomeTarefa = inputString.nextLine();
+                    createTarefa.setNome(nomeTarefa,plannerChoice.getIdTarefa());
+                    plannerChoice.setTarefaList(createTarefa);
+                    break;
+                case 5:
+                    System.out.println();
+
             }
 
         }

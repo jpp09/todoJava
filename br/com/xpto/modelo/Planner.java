@@ -8,13 +8,14 @@ public class Planner {
     private String nome;
     private int id;
     private ArrayList<Tarefa> tarefaList = new ArrayList<Tarefa>();
-    Scanner input = new Scanner(System.in);
+    private Scanner input = new Scanner(System.in);
 
     //Set do nome do meu planner
-    public void  setNome(String nome){
+    public void  setNome(String nome,int id){
         this.nome = nome;
         String choice;
         System.out.println("Você deseja mesmo colocar %s como nome do planner? - [sim/não]".formatted(nome));
+        setId(id);
         while (true) {
             choice = input.nextLine();
             if (choice.toLowerCase().equals("não")) {
@@ -30,7 +31,7 @@ public class Planner {
     }
 
     //Set id do meu planner
-    public void setId(int id){
+    private void setId(int id){
         this.id = id;
     }
 
@@ -39,4 +40,22 @@ public class Planner {
         System.out.println("Nome do Planner: %s\nID do Planner: %d".formatted(this.nome,this.id));
     }
 
+    private void setTarefas(Tarefa objeto){
+        this.tarefaList.add(objeto);
+    }
+
+    public void setTarefaList(Tarefa tarefa){
+        this.tarefaList.add(tarefa);
+        System.out.println("-- Tarefa criada com sucesso --");
+    }
+
+    public int getIdTarefa(){
+        return this.tarefaList.size() + 1;
+    }
+
+    public void getTarefas(){
+        for (Tarefa tarefa : tarefaList){
+            tarefa.getInfo();
+        }
+    }
 }
