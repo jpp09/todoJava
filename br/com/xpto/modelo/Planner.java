@@ -14,7 +14,7 @@ public class Planner {
     public void  setNome(String nome,int id){
         this.nome = nome;
         String choice;
-        System.out.println("Você deseja mesmo colocar %s como nome do planner? - [sim/não]".formatted(nome));
+        System.out.println(String.format("Você deseja mesmo colocar %s como nome do planner? - [sim/não]",nome));
         setId(id);
         while (true) {
             choice = input.nextLine();
@@ -24,7 +24,7 @@ public class Planner {
                 this.nome = nome;
                 break;
             }else if(choice.toLowerCase().equals("sim")){
-                System.out.println("-- Ok, %s mantido como nome do planner -- ".formatted(nome));
+                System.out.println(String.format("-- Ok, %s mantido como nome do planner -- ",nome));
                 break;
             }
         }
@@ -37,7 +37,7 @@ public class Planner {
 
     //Visualização das informações do planner
     public void getinfo(){
-        System.out.println("Nome do Planner: %s\nID do Planner: %d".formatted(this.nome,this.id));
+        System.out.println(String.format("Nome do Planner: %s\nID do Planner: %d",this.nome,this.id));
     }
 
     private void setTarefas(Tarefa objeto){

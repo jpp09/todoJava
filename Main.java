@@ -14,15 +14,7 @@ public class Main {
         int choice = 0;
         System.out.println("-- Bem vindo a Lista de tarefas XPTO --");
         while(choice != 8){
-            System.out.println("""
-                    \n1 - Criar um planner
-                    2 - Visualizar planner
-                    3 - Excluir um planner
-                    4 - Cria tarefa uma tarefa
-                    5 - Liatar tarefas - EM BREVE
-                    6 - Concluir uma tarefa - EM BREVE
-                    7 - Sair
-                    """);
+            System.out.println("\n1 - Criar um planner\n2 - Visualizar planner\n3 - Excluir um planner\n4 - Criar tarefa - Em manutenção\n5 - Liatar tarefas - EM BREVE\n6 - Concluir uma tarefa - EM BREVE\n7 - Sair");
             choice = inputInt.nextInt();
 
             switch (choice){
@@ -55,16 +47,22 @@ public class Main {
                     }
                     break;
                 case 4:
+                    //Arrumar o texto para selecionar o id
                     int idChoice = inputInt.nextInt();
                     Planner plannerChoice = plannerList.get(idChoice -1);
                     System.out.println("\n-- Escreva o nome da sua tarefa -- ");
                     Tarefa createTarefa = new Tarefa();
+                    System.out.println("Digite o nome da tarefa: ");
                     String nomeTarefa = inputString.nextLine();
                     createTarefa.setNome(nomeTarefa,plannerChoice.getIdTarefa());
                     plannerChoice.setTarefaList(createTarefa);
                     break;
                 case 5:
-                    System.out.println();
+                    for(Planner planner :plannerList){
+                        System.out.println(String.format("-- Listando as tarefas do planner: %s --"));
+                        planner.getinfo();
+                        planner.getTarefas();
+                    };
 
             }
 

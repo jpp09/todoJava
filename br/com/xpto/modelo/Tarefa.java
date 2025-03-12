@@ -16,9 +16,6 @@ public class Tarefa {
     }
 
     public void getInfo(){
-        System.out.println("""
-                Nome da Tarefa: %s
-                Id da Tarefa: %d
-                """.formatted(this.nome,this.id));
+        System.out.println(String.format("Nome da Tarefa: %s\nId da Tarefa: %d",this.nome,this.id));
     }
 }
