@@ -13,7 +13,7 @@ Este projeto é um sistema de gerenciamento de tarefas desenvolvido em Java para
 
 ## Tecnologias Utilizadas
 
-- Java 8 ou superior
+- Java 23
 
 ## Como Executar o Projeto
 
