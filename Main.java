@@ -13,7 +13,7 @@ public class Main {
 
         int choice = 0;
         System.out.println("-- Bem vindo a Lista de tarefas XPTO --");
-        while(choice != 8){
+        while(choice != 7){
             System.out.println("\n1 - Criar um planner\n2 - Visualizar planner\n3 - Excluir um planner\n4 - Criar tarefa\n5 - Listar tarefas\n6 - Concluir uma tarefa\n7 - Sair");
             choice = inputInt.nextInt();
 
@@ -110,7 +110,6 @@ public class Main {
                             }
                         }
                     }
-
                     break;
 
             }
