@@ -18,4 +18,12 @@ public class Tarefa {
     public void getInfo(){
         System.out.println(String.format("Nome da Tarefa: %s\nId da Tarefa: %d",this.nome,this.id));
     }
+
+    public String getNome(){
+        return this.nome;
+    }
+
+    public int getId(){
+        return this.id;
+    }
 }

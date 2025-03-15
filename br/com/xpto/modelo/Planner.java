@@ -55,7 +55,24 @@ public class Planner {
 
     public void getTarefas(){
         for (Tarefa tarefa : tarefaList){
-            tarefa.getInfo();
+            System.out.print(String.format("Tarefa %d°: %s | ",tarefa.getId(), tarefa.getNome()));
         }
+    }
+
+    public String getNome(){
+        return this.nome;
+    }
+
+    public int getId(){
+        return this.id;
+    }
+
+    public void removeTarefa(int id){
+        this.tarefaList.remove(id);
+        System.out.println("-- Tarefa removida --");
+    }
+
+    public ArrayList<Tarefa> getTarefaList(){
+        return this.tarefaList;
     }
 }
